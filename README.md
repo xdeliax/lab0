@@ -1,27 +1,31 @@
 # A Kernel Seedling
-TODO: intro
+I edited the proc_count function creating a variable counter that increases at each process, with a for loop using "for_each_process", then I created the kernel module and ran it with make and sudo insmod proc_count.ko and checked the output of count with cat /proc/count, which successfully outputs the number of processes on the machine.
 
 ## Building
 ```shell
-TODO: cmd for build
+make
+sudo insmod proc_count.ko
 ```
 
 ## Running
 ```shell
-TODO: cmd for running binary
+cat /proc/count
 ```
-TODO: results?
+80 processes
 
 ## Cleaning Up
 ```shell
-TODO: cmd for cleaning the built binary
+sudo rmmod proc_count.ko
+make clean
 ```
 
 ## Testing
 ```python
 python -m unittest
 ```
-TODO: results?
+Ran 3 tests in 3.707s
+
+OK
 
 Report which kernel release version you tested your module on
 (hint: use `uname`, check for options with `man uname`).
@@ -30,4 +34,4 @@ It should match release numbers as seen on https://www.kernel.org/.
 ```shell
 uname -r -s -v
 ```
-TODO: kernel ver?
+Linux 5.14.8-arch1-1 #1 SMP PREEMPT Sun, 26 Sep 2021 19:36:15 +0000
